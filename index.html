@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base 64</title>
+</head>
+
+<body>
+    <div style="display: flex; width: 1000px; margin: auto; flex-direction: column; gap: 30px; margin-top: 100px;">
+        <textarea id="content" style="height: 300px;"></textarea>
+        <button id="encode" style="height: 70px; cursor: pointer;">ENCODE</button>
+        <button id="decode" style="height: 70px; cursor: pointer;">DECODE</button>
+        <div id="result" style="background-color: aliceblue; padding: 20px; word-break: break-word;"></div>
+    </div>
+    <script>
+        const content = document.getElementById("content");
+        const encode = document.getElementById("encode");
+        const decode = document.getElementById("decode");
+        const result = document.getElementById("result");
+
+        encode.onclick = () => {
+            result.innerText = btoa(content.value)
+        }
+
+        decode.onclick = () => {
+            result.innerText = atob(content.value)
+        }
+
+    </script>
+</body>
+
+</html>
